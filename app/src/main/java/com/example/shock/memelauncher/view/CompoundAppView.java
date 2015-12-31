@@ -5,6 +5,7 @@ import android.media.Image;
 import android.support.annotation.BinderThread;
 import android.support.annotation.DrawableRes;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
