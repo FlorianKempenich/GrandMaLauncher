@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
     <ImageView
-        android:id="@+id/sidespinner_view_previous"
+        android:id="@+id/image_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/sidespinner_view_value"/>
+        android:layout_height="wrap_content"/>
     <TextView
-        android:id="@+id/sidespinner_view_current_value"
+        android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24sp" />

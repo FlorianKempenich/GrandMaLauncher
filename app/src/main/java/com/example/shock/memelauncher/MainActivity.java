@@ -5,10 +5,13 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.BinderThread;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import com.example.shock.memelauncher.view.CompoundAppView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +23,13 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.applications_text_view) TextView mApplicationsTextView;
+    @Bind(R.id.skype_compound) CompoundAppView mSkypeCompoundView;
+    @Bind(R.id.photo_compound) CompoundAppView mPhotoCompoundView;
+    @Bind(R.id.florian_compound) CompoundAppView mFlorianCompoundView;
 
     private static final String SKYPE_PACKAGE = "com.skype.raider";
     private static final String FLORIAN_PACKAGE = "com.example.shock.florian";
+    private static final String PHOTO_PACKAGE = "com.google.android.apps.photos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mApplicationsTextView.setAllCaps(true);
-        loadApps();
-    }
 
+        // Set compound views
+        mSkypeCompoundView.setTextAndImage(R.drawable.skype, null);
+        mPhotoCompoundView.setTextAndImage(R.drawable.photo, null);
+        mFlorianCompoundView.setTextAndImage(R.drawable.florian, null);
+
+    }
 
     /**
      * Ignore back pressed
@@ -43,28 +54,18 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
     }
 
-
-    private class AppDetail {
-        String label;
-        String name;
-        Drawable icon;
-    }
-
+    /**
+     * Temp method to check package names
+     */
     private void loadApps(){
         PackageManager manager = getPackageManager();
-        List<AppDetail> apps = new ArrayList<>();
 
         Intent i = new Intent(Intent.ACTION_MAIN, null);
         i.addCategory(Intent.CATEGORY_LAUNCHER);
 
         List<ResolveInfo> availableActivities = manager.queryIntentActivities(i, 0);
         for(ResolveInfo ri:availableActivities){
-            AppDetail app = new AppDetail();
-            app.label = ri.loadLabel(manager).toString();
-            app.name = ri.activityInfo.packageName;
-            Log.d("LOG", app.name);
-            app.icon = ri.activityInfo.loadIcon(manager);
-            apps.add(app);
+            Log.d("PACKAGE_NAME", ri.activityInfo.packageName);
         }
     }
 
@@ -88,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.florian_card)
     void callFlorian() {
         startAppWithPackageName(FLORIAN_PACKAGE);
+    }
+
+    @OnClick(R.id.skype_card)
+    void startSkype() {
+        startAppWithPackageName(SKYPE_PACKAGE);
+    }
+
+    @OnClick(R.id.photo_card)
+    void startPhoto() {
+        startAppWithPackageName(PHOTO_PACKAGE);
     }
 
 }
