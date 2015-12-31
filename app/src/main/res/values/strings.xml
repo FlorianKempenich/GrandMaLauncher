@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MemeLauncher</string>
+
+    <string name="advanced_mode">Mode Avancé</string>
+
+    <string name="warning_text_header">Attention !!</string>
+    <string name="warning_text_content">Ce mode est très compliqué.\nDemande de l\'aide à Maguite ou
+    Bernard pour te servir de ce mode :)</string>
+    <string name="warning_text_hint">A TOUT MOMENT appuie sur le BOUTON ROND pour revenir en arrière</string>
+</resources>

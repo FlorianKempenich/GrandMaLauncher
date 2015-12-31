@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <style name="Theme.AppCompat.Light.NoActionBar.Main" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.Main.Wallpaper" parent="@style/Theme.AppCompat.Light.NoActionBar.Main">
+        <item name="android:windowBackground">@drawable/wallpaper</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <!-- CardView styles -->
+    <style name="CardView.Main" parent="CardView">
+        <item name="cardBackgroundColor">@color/amber_background</item>
+        <item name="cardCornerRadius">10dp</item>
+    </style>
+
+    <style name="CardView.Main.Weight.Vertical" parent="CardView.Main">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="CardView.Main.Weight.Horizontal" parent="CardView.Main">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+</resources>
