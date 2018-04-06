@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.shock.memelauncher.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -21,8 +21,8 @@ import butterknife.ButterKnife;
  */
 public class CompoundAppView extends LinearLayout {
 
-    @Bind(R.id.image_view) ImageView mImageView;
-    @Bind(R.id.text_view) TextView mTextView;
+    @BindView(R.id.image_view) ImageView mImageView;
+    @BindView(R.id.text_view) TextView mTextView;
 
     public CompoundAppView(Context context) {
         this(context, null, 0);

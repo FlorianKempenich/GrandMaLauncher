@@ -3,79 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shock.memelauncher.MainActivity"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:padding="20dp"
+    tools:context="com.example.shock.memelauncher.MainActivity">
 
     <android.support.v7.widget.CardView
-        style="@style/CardView.Main.Weight.Vertical"
-        android:layout_weight="45"
-        android:layout_margin="30dp"
-        android:id="@+id/florian_card"
-        >
+        android:id="@+id/photo_card"
+        style="@style/CardView.Main"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="30">
+
         <com.example.shock.memelauncher.view.CompoundAppView
-            android:layout_gravity="center"
-            android:padding="20dp"
-            android:id="@+id/florian_compound"
+            android:id="@+id/photo_compound"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="20dp" />
 
     </android.support.v7.widget.CardView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="45"
-        android:layout_margin="30dp"
-        android:orientation="horizontal"
-        >
-        <android.support.v7.widget.CardView
-            android:id="@+id/skype_card"
-            style="@style/CardView.Main"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginEnd="15dp"
-            >
-            <com.example.shock.memelauncher.view.CompoundAppView
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:id="@+id/skype_compound"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/photo_card"
-            style="@style/CardView.Main"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="15dp"
-            >
-            <com.example.shock.memelauncher.view.CompoundAppView
-                android:layout_gravity="center"
-                android:padding="20dp"
-                android:id="@+id/photo_compound"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
 
     <android.support.v7.widget.CardView
-        style="@style/CardView.Main.Weight.Vertical"
-        android:layout_weight="10"
-        android:layout_margin="15dp"
-        android:id="@+id/applications_card"
-        >
-        <TextView
-            android:id="@+id/applications_text_view"
-            android:layout_gravity="center"
-            android:textSize="30sp"
+        android:id="@+id/skype_card"
+        style="@style/CardView.Main"
+        android:layout_width="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_height="match_parent"
+        android:layout_weight="60">
+
+        <com.example.shock.memelauncher.view.CompoundAppView
+            android:id="@+id/skype_compound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/advanced_mode"/>
+            android:layout_gravity="center"
+            android:padding="20dp" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/applications_card"
+        style="@style/CardView.Main.Weight.Vertical"
+        android:layout_width="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_height="match_parent"
+        android:layout_weight="10">
+
+        <TextView
+            android:id="@+id/applications_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/advanced_mode"
+            android:textSize="24sp" />
 
     </android.support.v7.widget.CardView>
 </LinearLayout>
